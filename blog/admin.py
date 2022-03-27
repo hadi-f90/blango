@@ -5,9 +5,8 @@ from blog.models import Tag, Post
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
-    list_display = ('slug', 'published_at')
+    list_display = ('slug', 'published_at', 'summary')
 
 
 admin.site.register(Tag)
 admin.site.register(Post, PostAdmin)
-
